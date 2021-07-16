@@ -1,8 +1,11 @@
-<html lang="en"><head>
+<html lang="en">
+    <head>
     <meta charset="utf-8"> 
+    <title>Orinoco</title>   
+    <link rel="stylesheet" href="css/img/main.css">  
+    <script src="script.js" defer> //DEFER LANCE SCRIPT APRES CHARGEMENT PAGE</script>  
+         
     
-
-    <link rel="" href="">      
     
   </head>
   
@@ -10,58 +13,76 @@
     
 
       <header>
-          logo a gauche
-          name au centre 
-          bouton accueil panier        
+        <img class="headerLogo" src="css/img/logo.png" >
+        <nav class="navHeader"> 
+
+            <a class="linkHeader" href="index.html">Accueil</a>
+            <a class="linkHeader" href="product.html">Panier</a>            
+            <a class="linkHeader "href="mailto:contact@orinoco.fr">Contact</a>
+
+        </nav> 
+          
+              
       </header> 
 
       <main>    
           <article>
               <img id='article1'src="" alt="Appareil photo">
               <div>
-                  <H1>NOM PRODUIT</H1>
+                  <H2>NOM PRODUIT</H2>
+                  <p>Descriptif</p>
                   
               </div>
-          </article>      
- 
+          </article>     
+          <article>
+            <img id='article2'src="" alt="Appareil photo">
+            <div>
+                <H2>NOM PRODUIT</H2>
+                <p>Descriptif</p>
+                
+            </div>
+        </article>     
+        <article>
+            <img id='article3'src="" alt="Appareil photo">
+            <div>
+                <H2>NOM PRODUIT</H2>
+                <p>Descriptif</p>
+            </div>
+        </article>     
+
+        <script type="text/javascript" >
+
+            // ADRESSE CHEMIN IMG
+              const extensionPictures = ".jpg"; 
+              const cheminPictures = "JWDP5/images/vcam_" ; 
+              let productNumber= 1 ;
+              let src = cheminPictures + productNumber + extensionPictures;
+           // DOM IMG PRODUCT
+              let product = document.getElementById("article" + productNumber)
+           // ECRIRE SRC 
+              product.setAttribute('src', src); //on peut ecrire product.src = ;
+           // Dimension image   
+              product.setAttribute('width', 150);
+
+           //fectch connectionn API et acceder au donnees avec get et la PROMISE
+
+           
+           //mettre valeur dans une variable
+       
+              
+           //
+             
+        
+           </script> 
       </main>
 
       <footer>      
-
-         <img class="logo" src="" alt="Logo">   
-         
-         
+        <img class="footerLogo" src="css/img/logo.png" >             
          <a href="#">Mentions légales</a>
-         <a href="mailto:contact@laboite.fr">Contact</a>
+         <a href="mailto:contact@orinoco.fr">Contact</a>
         
       </footer>
   
-      <script type="text/javascript" >
-
-      // ADRESSE CHEMIN IMG
-        const extensionPictures = ".jpg"; 
-        const cheminPictures = "JWDP5/images/vcam_" ; 
-        let productNumber= 1 ;
-        let src = cheminPictures + productNumber + extensionPictures;
-     // DOM IMG PRODUCT
-        let product = document.getElementById("article" + productNumber)
-     // ECRIRE SRC 
-        product.setAttribute('src', src); //on peut ecrire product.src = ;
-     // Dimension image   
-        product.setAttribute('width', 150);
-
-
- 
-
-
-        
-        
-
-         
-        alert(product);
-
-     </script> 
-
-
+     
   </body>
   </html>
