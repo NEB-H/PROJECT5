@@ -3,9 +3,10 @@ fetch("http://localhost:3000/api/cameras")
 .then( importList => importList.json())             //convert to JSON sinon inexploitable 
 .then( listProduct => { //variable des donnees exploitable 
 
+  /*boucle*/           for (let arctileNumber = 0 ;arctileNumber<3;arctileNumber++) { 
+
                         //Recuper chaque data et assigner a une variable en fonction du numero de produit
-                    
-    /*Article Number*/  let arctileNumber = 0 ;  
+               
 
                         let id = listProduct[arctileNumber]._id;
                         let name = listProduct[arctileNumber].name;
@@ -33,9 +34,10 @@ fetch("http://localhost:3000/api/cameras")
                              locImg.setAttribute('alt', "Apareil photo");
   
     /*config title */        locTitle.innerHTML= name;
-    /*config Description */  locdescription.innerHTML= description; 
+    /*config Description */  locdescription.innerHTML= description;
+    }  
                           
-                             ;
+                             
 
 
                              
