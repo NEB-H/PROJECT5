@@ -39,7 +39,7 @@ fetch("http://localhost:3000/api/cameras")
   
     /*config title */        locTitle.innerHTML= name;
     /*config Description */  locdescription.innerHTML= description;
-    /*config linkProduct*/   locproductLink.setAttribute('href',"product.html?id="+id)
+    /*config linkProduct*/   locproductLink.setAttribute('href',"product.html?id="+id+"?articleNumber="+arctileNumber)
 
 
     }  
