@@ -5,7 +5,7 @@ fetch("http://localhost:3000/api/cameras")
 
    /*NOmbre de produits*/let b=listProduct.length-2;
 
-  /*boucle*/           for (let arctileNumber = 0 ;arctileNumber<b;arctileNumber++) { 
+  /*boucle*/           for (let arctileNumber = 0 ;arctileNumber<1;arctileNumber++) { 
 
                          //Recuper chaque data et assigner a une variable en fonction du numero de produit
                
@@ -29,7 +29,7 @@ fetch("http://localhost:3000/api/cameras")
     /*localisation img*/     let locImg= document.getElementById(id);
     /*localisation title*/   let locTitle= document.getElementById("title"+arctileNumber); 
     /*locdescription*/       let locdescription= document.getElementById("description"+arctileNumber);
-    /*locproductLink*/       let productLink= document.getElementById("productLink"+arctileNumber);
+    /*locproductLink*/       let locproductLink= document.getElementById("productLink"+arctileNumber);
 
                               console.log(locTitle)
     
@@ -39,6 +39,7 @@ fetch("http://localhost:3000/api/cameras")
   
     /*config title */        locTitle.innerHTML= name;
     /*config Description */  locdescription.innerHTML= description;
+    /*config linkProduct*/   locproductLink.setAttribute('href',"product.html?id="+id)
 
 
     }  
