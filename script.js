@@ -3,9 +3,9 @@ fetch("http://localhost:3000/api/cameras")
 .then( importList => importList.json())             //convert to JSON sinon inexploitable 
 .then( listProduct => { //variable des donnees exploitable 
 
-   /*NOmbre de produits*/let b=listProduct.length-2;
+   /*NOmbre de produits*/let b=listProduct.length;
 
-  /*boucle*/           for (let arctileNumber = 0 ;arctileNumber<1;arctileNumber++) { 
+  /*boucle*/           for (let arctileNumber = 0 ;arctileNumber<b;arctileNumber++) { 
 
                          //Recuper chaque data et assigner a une variable en fonction du numero de produit
                
