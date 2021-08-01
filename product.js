@@ -7,7 +7,7 @@ let urlData= new URLSearchParams(window.location.search)
 fetch("http://localhost:3000/api/cameras/"+id)
 .then( importList => importList.json())             //convert to JSON sinon inexploitable 
 .then( listProduct => { 
-                console.log(listProduct)
+ 
             
                         let name = listProduct.name;
                         let price = listProduct.price;
@@ -29,13 +29,11 @@ fetch("http://localhost:3000/api/cameras/"+id)
         /*config title */        locTitle.innerHTML= name;
         /*config Description */  locdescription.innerHTML= description;
                                  locPrice.innerHTML= price+"$";
-                                 test=lenses.length
                                  
     /*repeter nombre de lenses*/ for(let i=0;i < lenses.length;i++){
     /*Ajout d'option*/                 locOption.add (new Option(lenses[i]));}
 
-    /*variable panier*/     let panier= [];
-    /*ligne produit*/       class produit {
+    /*ajout produit*/       class achat {
                                                 constructor(name , price,lenses) {
                                                     this.name=name;
                                                     this.price= price;
@@ -43,15 +41,25 @@ fetch("http://localhost:3000/api/cameras/"+id)
 
                                                     }    
                                     }   
-
+    /*panier*/                let panier =[]                             
 
     /*on cick*/               btn.onclick =function setData(){
+                                
+                                        if (lensSelect.value=="")
+                                        {alert("Merci de selectionner une option!")}
+                                        else{ 
+                                              let add = new achat(name,price,lenses)
+                                              panier.push(add)
+                                              console.log(panier)
+                                            }
+
+    /*nouvelle instance produit*/               
                                                 
 
-    /*nouvelle instance produit*/                let add = new produit (name,price,lenses);
-   
-    /*add to local storage*/                        
+    
+                         
+                                                            };
                                       
-                                                  };              
+                                                                                      
 })
 
