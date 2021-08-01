@@ -33,5 +33,25 @@ fetch("http://localhost:3000/api/cameras/"+id)
                                  
     /*repeter nombre de lenses*/ for(let i=0;i < lenses.length;i++){
     /*Ajout d'option*/                 locOption.add (new Option(lenses[i]));}
+
+    /*variable panier*/     let panier= [];
+    /*ligne produit*/       class produit {
+                                                constructor(name , price,lenses) {
+                                                    this.name=name;
+                                                    this.price= price;
+                                                    this.lenses=lensSelect.value;
+
+                                                    }    
+                                    }   
+
+
+    /*on cick*/               btn.onclick =function setData(){
+                                                
+
+    /*nouvelle instance produit*/                let add = new produit (name,price,lenses);
+   
+    /*add to local storage*/                        
+                                      
+                                                  };              
 })
 
