@@ -10,10 +10,11 @@ fetch("http://localhost:3000/api/cameras/"+id)
  
             
                         let name = listProduct.name;
-                        let price = listProduct.price;
+                        let price = listProduct.price/100;
                         let description = listProduct.description;
                         let imgUrl=listProduct.imageUrl;
-                        let lenses= listProduct.lenses
+                        let lenses= listProduct.lenses;
+                        let quantite=0;
                         
     /*locatlisation Article*/let locArticle = document.getElementsByTagName('article');
     /*fonions creer img*/    let newImg = document.createElement("img"); 
@@ -38,6 +39,7 @@ fetch("http://localhost:3000/api/cameras/"+id)
                                                     this.name=name;
                                                     this.price= price;
                                                     this.lenses=lensSelect.value;
+                                                    this.quantite= 1;
 
                                                     }    
                                     }   
@@ -48,12 +50,19 @@ fetch("http://localhost:3000/api/cameras/"+id)
                                         if (lensSelect.value=="")
                                         {alert("Merci de selectionner une option!")}
                                         else{ 
-                                              let add = new achat(name,price,lenses)
-                                              panier.push(add)
-                                              console.log(panier)
-                                            }
+                                            
+                                                                let add = new achat(name,price,lenses,quantite)
+                                                                panier.push(add)
+                                                                console.log(panier)
 
-    /*nouvelle instance produit*/               
+/*verifier si objet existe*/                                  
+
+                                                                                               
+ /*Mettre dans storage*/                                         localStorage.setItem('panier', JSON.stringify(panier))
+                                             }
+
+                                            
+          
                                                 
 
     
