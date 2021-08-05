@@ -1,8 +1,9 @@
 <html lang="en"><head>
     <meta charset="utf-8"> 
     <title>Orinoco</title>   
-    <link rel="stylesheet" href="css/img/main.css">      
-    <script src="recap.js" defer></script>
+    <link rel="stylesheet" href="css/img/main.css"> 
+
+    <script src="panier.js" defer></script>
     
   </head>
   <body>
@@ -13,7 +14,7 @@
         <nav class="navHeader"> 
 
             <a class="linkHeader" href="index.html">Accueil</a>
-            <a class="linkHeader" href="product.html">Panier</a>            
+            <a class="linkHeader" href="panier.html">Panier</a>            
             <a class="linkHeader "href="mailto:contact@orinoco.fr">Contact</a>
 
         </nav> 
@@ -21,24 +22,15 @@
       
 
       <main>   
-          <div style="
-          background-color: #9e9e9e;
-          width: auto;
-          min-height: 150px;
-          display: grid;
-          "
-      >
-              
-              
+          <div class="panierValidation"
+      >     
           
-          <div id="recap"> 
-              
-          </div>
-          <div id=total>
-              
-
-          </div>
-          <a  href="confirmation.html"><button id="validation"> Valider mon panier</button></a>
+                <div id=recap></div>
+                <div id=total></div>
+                <div id=informationCLient></div>
+                <a  href="confirmation.html"><button id="validation"> Valider mon panier</button></a>
+          </div>  
+               
       </main>
 
       <footer>      

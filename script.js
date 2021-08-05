@@ -36,6 +36,7 @@ fetch("http://localhost:3000/api/cameras")
     /*config img */          locImg.setAttribute('src',imgUrl);
                              locImg.setAttribute('width', 150);
                              locImg.setAttribute('alt', "Apareil photo");
+
   
     /*config title */        locTitle.innerHTML= name;
     /*config Description */  locdescription.innerHTML= description;

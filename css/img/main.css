@@ -1,3 +1,7 @@
+*{
+ 
+    margin: 5px;
+}
 html{
     margin: 0px 5rem;
    
@@ -6,4 +10,98 @@ html{
 main{
     margin: 3rem 5rem;
     text-align: center;
+}
+article
+{
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 10px;
+    justify-content: center;
+    box-shadow: 0 12px 12px #0000002e;
+    padding: 10px;
+   
+}
+article div
+{
+    text-align: justify;
+}
+a { 
+text-decoration: none
+
+}
+nav:focus-only{
+     outline: 5px solid black;
+
+      
+}
+.headerLogo{
+
+    width: 100%;
+    height: 25%;
+    max-height: 250px;
+    font-size: 30;;
+}
+footer{
+    text-align: center;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+}
+nav a{
+    color: purple;
+    box-shadow: 10px 10px 10px #4f3ca32e;
+    font-size: 30px;
+    transition: transform 0.1s;
+
+}
+nav a:hover{
+    transform: scale(1.2);}
+
+#produit
+{
+    display: flex;
+    padding: 10px;
+    
+    
+}
+
+#description{
+    text-align: justify;
+   
+}
+
+#option {
+    
+        display: inline-grid;
+        padding: 10px;
+    
+}
+
+.P2{
+    flex-direction: column;
+}
+
+#details {
+    white-space: break-spaces;
+}
+.recapValidation{
+    min-height: 50%;
+}
+
+.panierValidation {
+    
+    background-color: #9e9e9e;
+    width: auto;
+    min-height: 150px;
+    display: grid;
+
+}
+
+.panierValidation div{
+    
+    background-color: #dbd2d2;
+    width: auto;
+    box-shadow: 10px 10px 10px #4f3ca32e;
+
 }

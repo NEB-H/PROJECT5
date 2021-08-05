@@ -16,9 +16,9 @@ fetch("http://localhost:3000/api/cameras/"+id)
                         let lenses= listProduct.lenses;
                         let quantite=0;
                         
-    /*locatlisation Article*/let locArticle = document.getElementsByTagName('article');
+    /*locatlisation Article*/let locArticle = document.getElementById('infos');
     /*fonions creer img*/    let newImg = document.createElement("img"); 
-                             locArticle[0].appendChild(newImg).setAttribute('id',id);        
+                             locArticle.appendChild(newImg).setAttribute('id',id);        
     /*localisation img*/     let locImg= document.getElementById(id);
     /*localisation title*/   let locTitle= document.getElementById("title"); 
     /*locdescription*/       let locdescription= document.getElementById("description");
@@ -43,7 +43,7 @@ fetch("http://localhost:3000/api/cameras/"+id)
 
                                                     }    
                                     }   
-    /*panier*/                let panier =[]                             
+    /*panier*/                let panier =JSON.parse(localStorage.getItem('panier' ));                             
 
     /*on cick*/               btn.onclick =function setData(){
                                 
@@ -54,12 +54,10 @@ fetch("http://localhost:3000/api/cameras/"+id)
                                                                 let add = new achat(name,price,lenses,quantite)
                                                                 panier.push(add)
                                                                 console.log(panier)
-
-/*verifier si objet existe*/                                  
-
-                                                                                               
- /*Mettre dans storage*/                                         localStorage.setItem('panier', JSON.stringify(panier))
-                                             }
+/*verifier si objet existe*/                                                                                                                               
+ /*Mettre dans storage*/                                        localStorage.setItem('panier', JSON.stringify(panier))
+                                                                alert("L'article a bien ete ajoute au panier !");
+}
 
                                             
           

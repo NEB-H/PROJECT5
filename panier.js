@@ -25,5 +25,5 @@ for (let i=0;i<listeArticle.length;i++)
 
         /*Total*/
         let locTotal= document.getElementById("total");
-        locTotal.innerHTML="<p>Le montant de votre commande est de:  "+total+"$</p> "
+        locTotal.innerHTML="<p>Le montant de votre commande est de:  "+total+"$</p> ";
 
