@@ -69,9 +69,12 @@ document.getElementById("formDetails").addEventListener("submit", function (e){
         console.log(JSON.stringify(listeArticle))
         
         /*FETCH POST */
-        const promise01=fetch("http://localhost:3000/api/cameras/",{
+        const promise01=fetch("http://localhost:3000/api/cameras/order",{
           method:"POST",
-          body:JSON.stringify(contact),
+          body:JSON.stringify({
+              contact,
+                listeArticle,
+            }),
                 
           
           headers:{
