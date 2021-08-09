@@ -1,8 +1,8 @@
 /*recuper url*/
 let urlData= new URLSearchParams(window.location.search)
 /*recuperer parametres*/
- let id = urlData.get("id") 
-
+ let id = urlData.get("id"); 
+ let panier = null;
 /*FETCH*/
 fetch("http://localhost:3000/api/cameras/"+id)
 .then( importList => importList.json())             //convert to JSON sinon inexploitable 
@@ -15,7 +15,18 @@ fetch("http://localhost:3000/api/cameras/"+id)
                         let imgUrl=listProduct.imageUrl;
                         let lenses= listProduct.lenses;
                         let quantite=0;
-                        
+                        console.log(JSON.parse(localStorage.getItem("panier" )))
+                       
+                        if (JSON.parse(localStorage.getItem("panier" ))==null )
+{
+     panier = [];
+}
+else{
+    
+   panier= JSON.parse(localStorage.getItem("panier" ))
+    
+}
+                       
     /*locatlisation Article*/let locArticle = document.getElementById('infos');
     /*fonions creer img*/    let newImg = document.createElement("img"); 
                              locArticle.appendChild(newImg).setAttribute('id',id);        
@@ -43,7 +54,9 @@ fetch("http://localhost:3000/api/cameras/"+id)
 
                                                     }    
                                     }   
-    /*panier*/                let panier =JSON.parse(localStorage.getItem('panier' ));                             
+                               
+                                      
+                               
 
     /*on cick*/               btn.onclick =function setData(){
                                 

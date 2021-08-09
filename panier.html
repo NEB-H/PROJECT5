@@ -26,20 +26,21 @@
       >     
           
                 <div id=recap></div>
-                <div id=total></div>
+                <div id=total></div> 
 
                 <div id=formulaire>
-                    <form>
+                    <form method="POST" id="formDetails">
                         <legend> Vos coordonnees</legend>
-                        <input type="text" id="nom" placeholder="NOM"/>
-                        <input type="text" id="prennm" placeholder="PRENOM"/>
-                        <input type="emaail" id="email" placeholder="XXX@abc.fr"/>
-                        <input type="tel" id="tel" placeholder="01 23 45 56 78"/>
-                        <input type="text" id="adresse" placeholder="1 RUE DE PARIS"/>
-                        <input type="text" id="ville" placeholder="NOM"/>    
+                        <input type="text" id="nom" placeholder="NOM" required/>
+                        <input type="text" id="prenom" placeholder="PRENOM" required/>
+                        <input type="email" id="email" placeholder="XXX@gmail.fr"pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required/>
+                        <input type="tel" id="tel" placeholder="0123455678" pattern="(0|\\+33|0033)[1-9][0-9]{8}",required/>
+                        <input type="text" id="adresse" placeholder="1 RUE DE PARIS"required/>
+                        <input type="text" id="ville" placeholder="Ville"required/>   
+                        <input type="submit" id="submit" value="Confirmer" />
                     </form>
                 </div>
-                <a  href="confirmation.html"><button id="validation"> Valider mon panier</button></a>
+             <button id="validation"> Valider mon panier</button>
           </div>  
                
       </main>
