@@ -1,4 +1,5 @@
 let listeArticle = JSON.parse(localStorage.getItem("panier" ));/*recuperer la liste des article */
+let panier=[]
 let total=0;
 document.getElementById("validation").disabled = true; /*empecher le client de valider */
     if (listeArticle){
@@ -18,7 +19,7 @@ document.getElementById("validation").disabled = true; /*empecher le client de v
 
             }
             
-        
+            
         /*localiser et creer Total*/
 
         let locTotal= document.getElementById("total");
@@ -50,7 +51,7 @@ document.getElementById("validation").disabled = true; /*empecher le client de v
 
 
 
-    /*Recuperation des element du form au submit*/          
+/*Recuperation des element du form au submit*/          
 
 document.getElementById("formDetails").addEventListener("submit", function (e){
      
@@ -66,23 +67,44 @@ document.getElementById("formDetails").addEventListener("submit", function (e){
         document.getElementById("validation").disabled = false; /*autoriser le client de valider */
         alert('Corddonnees valider');
         console.log(JSON.stringify(contact))
-        console.log(JSON.stringify(listeArticle))
-        
-        /*FETCH POST */
-        const promise01=fetch("http://localhost:3000/api/cameras/order",{
-          method:"POST",
-          body:JSON.stringify({
-              contact,
-                products:listeArticle,
-            }),
-                
-          
-          headers:{
-          "Content-Type":"application/json",
-          }
-        });
-      
-});
+        console.log(JSON.stringify(listeArticle))  
 
+                
+    /*SEND*/
+     promise=fetch("http://localhost:3000/api/cameras/order",{
+                method:"POST",
+                body:JSON.stringify({
+                    contact,
+                        products:[],
+                    }),
+                        
+                
+                headers:{
+                "Content-Type":"application/json",
+                }
+                });
+     /*RECUPERATION DES INFOS ENVOYE PAR L API*/
+     promise.then((response) => {
+         test=response.json()
+         console.log(test);
+         test.then((response)=>{
+             console.log(response.orderId)
+             /*ENVOI DE L ID COMMANDE DANS LE STORAGE + total*/ 
+             let idComande=response.orderId;
+             localStorage.setItem('idCommande', JSON.stringify(idComande))
+             localStorage.setItem('TOTAL', JSON.stringify(total))
+         })
+        })
+                
+
+});    
+
+
+
+        
+
+        
+     
+      
 
   
