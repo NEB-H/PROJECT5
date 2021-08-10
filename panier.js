@@ -73,7 +73,7 @@ document.getElementById("formDetails").addEventListener("submit", function (e){
           method:"POST",
           body:JSON.stringify({
               contact,
-                listeArticle,
+                products:listeArticle,
             }),
                 
           
