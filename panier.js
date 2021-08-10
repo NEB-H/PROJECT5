@@ -29,7 +29,7 @@ document.getElementById("validation").disabled = true; /*empecher le client de v
     else{
         
             alert("Votre panier est vide")
-        
+        listeArticle=[]
     }
 
 
