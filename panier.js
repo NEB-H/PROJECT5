@@ -1,3 +1,4 @@
+
 let listeArticle = JSON.parse(localStorage.getItem("panier" ));/*recuperer la liste des article */
 let panier=[]
 let total=0;
@@ -75,7 +76,7 @@ document.getElementById("formDetails").addEventListener("submit", function (e){
                 method:"POST",
                 body:JSON.stringify({
                     contact,
-                        products:[],
+                    products:[],
                     }),
                         
                 
