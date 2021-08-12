@@ -8,7 +8,7 @@ fetch("http://localhost:3000/api/cameras/"+id)
 .then( importList => importList.json())             //convert to JSON sinon inexploitable 
 .then( listProduct => { 
  
-            
+                
                         let name = listProduct.name;
                         let price = listProduct.price/100;
                         let description = listProduct.description;
