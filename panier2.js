@@ -83,8 +83,8 @@ function getResult(){
 }
 
 
-/*LOCALISATION DES ELEMENTS DU FORMULAIRE DANS LE DOM*/
-function localisation(){
+/*LOCALISATION ET RECUPERATION DES ELEMENTS DU FORMULAIRE DANS LE DOM*/
+function getForm(){
     firstName= document.getElementById("prenom").value;
     lastName= document.getElementById("nom").value;
     address= document.getElementById("adresse").value;
@@ -117,7 +117,7 @@ function form(){
     document.getElementById("formDetails").addEventListener("submit", function (e){
         /*EMPECHER LE RAFFRECHISSEMENT DE LA PAGE AU SUBMIT*/
         e.preventDefault();
-        localisation();
+        getForm();
         createContact();
         alert('Coordonnees valides');
         disabled(false);
